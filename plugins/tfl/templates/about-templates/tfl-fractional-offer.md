@@ -1,24 +1,29 @@
 # My fractional offer
 
-<!-- Filled by tfl-setup. If any line still says "needs input," run tfl-setup before using other skills. -->
+<!-- This file holds your Fractional Offer card, pasted exactly as it appears on the Fractional Offer page of your playbook. When your offer changes in the playbook, paste the new version over this one. Every skill reads your title, wedge, pricing, targets, and outcome from this card. -->
 
-## Function
-<!-- The fractional lane: RevOps, CFO, CMO, COO, AI/Automation, and so on. -->
-needs input
+**Title:** needs input
 
-## What I fix, in one sentence
-needs input
+**Founder Problem:** needs input
 
-## Sprint length
-<!-- How long a first engagement runs: 3-6 weeks. Feeds the sprint section of every value-add. -->
-needs input
+**Phase-1 Wedge:** needs input
 
-## Ideal client
-- **Company size:** needs input
-- **Stage:** needs input
-- **Industries:** needs input
-- **Geography:** needs input
-- **Signals that make a company a fit:** needs input
+**What the Wedge Surfaces:** needs input
+
+**Retainer:** needs input
+
+**Target Company:** needs input
+
+**Triggers:** needs input
+
+**Who I help:** needs input
+
+**Outcome:** needs input
+
+**How I help:** needs input
+
+**Hours (internal):** needs input
 
 ## Tools
+
 - **AI Ark connected:** needs input (yes / not yet)

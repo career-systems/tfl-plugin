@@ -6,6 +6,8 @@ risk: low
 
 # tfl-record-decisions
 
+> **Deprecated — this skill is no longer supported and will be removed in a future release.**
+
 ## Summary
 
 `about/decisions.md` is the member's standing record of what they have already decided — a corrected fact, who they picked as the recipient, a voice preference, an offer tweak, something they turned down. Every TFL skill and workflow reads it back before it runs, the same way it reads the other `about/` files, so the member never has to repeat themselves. This skill keeps that record accurate and current after each run.
