@@ -1,7 +1,15 @@
 # My voice
 
 How everything I send should sound. Every writing skill reads this before
-drafting, and checks the finished draft against it before showing me.
+drafting, and checks the finished draft against it before showing me. The
+check runs in 3 passes, in order: the sweep against the banned list (the
+floor, never the pass), then every line read out loud as if I'm saying it to
+a founder over coffee, then one deliberate look for the patterns below - the
+reframes, the rule of three, same-length sentences, analysis bolted on with
+"-ing" phrases, and idioms or insider slang. One hit at any pass, rewrite
+that sentence and re-check. The coffee test alone doesn't catch idioms,
+because a person WOULD say "standing start" to a friend; the third pass
+checks for them on purpose.
 
 ## My personal notes
 <!-- Filled by tfl-setup: formality, phrases they actually use, anything to avoid. -->
@@ -74,3 +82,9 @@ Write like a sharp human who happens to be typing.
   upside.
 - **Engagement bait:** "Let that sink in," "read that again," "here's what
   nobody tells you."
+- **Idioms and insider slang:** racing metaphors, finance shorthand, sports
+  talk. "Standing start," "re-up," "home run," "move the needle," "table
+  stakes," "low-hanging fruit." Sounding like a person isn't enough; every
+  word stays plain. The test: a non-native reader or a 10-year-old knows
+  every word. Say the same thing in plain words ("when nobody knew you
+  yet," "put more money in").

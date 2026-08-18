@@ -60,31 +60,48 @@ Every hosted **workflow** (as opposed to a single methodology skill) gets a matc
 plugin **pointer skill** under `skills/<workflow-name>/SKILL.md`. The pointer skill carries
 no methodology of its own — its only job is to give the member slash completion (e.g.
 `/tfl:tfl-build-value-add`) and tell Claude to call the hosted tool by name. The hosted
-tool's server-side prompt (sourced verbatim from `forKatie/TFL Skill Repo v3/client-plugin/`)
+tool's server-side prompt (sourced verbatim from `forKatie/TFL Skill Repo v3.5/`)
 remains the single source of truth for the workflow's process; the pointer skill must never
 duplicate or paraphrase it. `tfl-build-value-add` is the first instance of this convention;
 apply it to every future hosted workflow.
 
-## Deviations from Katie's vendored v3 source
+## Deviations from Katie's vendored v3.5 source
 
 This plugin ships from Katie's pristine vendored source
-(`forKatie/TFL Skill Repo v3/client-plugin/`), which is never edited in place. Every place
+(`forKatie/TFL Skill Repo v3.5/`), which is never edited in place. Every place
 a shipped artifact differs from that source by even one character is recorded as a find/
 replace entry in `tests/unit/tfl-plugin/vendor-deviations.ts` and machine-checked for
-byte-equality (spec 133 D7); that ledger is the source of truth. Two entries change how
-this plugin behaves for a member:
+byte-equality (spec 133 D7); that ledger is the source of truth. These change how this
+plugin behaves for a member:
 
-- **D1 — workspace root stays `the-fractional-life/`.** v3's `tfl-setup` scaffolds at
+- **D1 — workspace root stays `the-fractional-life/`.** v3.5's `tfl-setup` scaffolds at
   `Desktop/fractional-life/`. We keep `the-fractional-life/`, resolved under the folder
   the member opened, because a `Desktop/` path doesn't exist in a Cowork/cloud session
   and every hosted `fileContract` is relative to the named root.
-- **D2 — `templates/` stays installed into the scaffold.** v3's `tfl-setup` no longer
-  copies `templates/` into the member's workspace. We keep the install (all 5 files, with
+- **D2 — `templates/` stays installed into the scaffold.** v3.5's `tfl-setup` no longer
+  copies `templates/` into the member's workspace. We keep the install (all 6 files, with
   `about-templates/` intact) because `tfl_write_value_add` still reads
   `templates/value-add-template.md` by path.
 
-A third entry changes what ships, not what runs: **D3** is the `tfl-record-decisions`
+- **D8 — a run refreshes the assets we own.** Katie's `tfl-setup` installs templates only
+  when they're absent, so a member scaffolded by an older plugin version keeps whatever
+  they were first given — and when Katie revises the methodology, they keep drafting
+  against the old rules. Every run now overwrites `templates/` outright (all 6 files; they
+  are ours, never the member's work) and rebuilds the house-owned sections of
+  `about/tfl-voice.md` from the current template, splicing the member's
+  `## My personal notes` back in word for word. Their other about files and `START-HERE.md`
+  are still never overwritten. If the voice file is missing that heading on either side,
+  the run leaves it alone and flags it rather than guessing at the boundary.
+
+One entry changes what ships, not what runs: **D3** is the `tfl-record-decisions`
 deprecation notice described above.
+
+The hosted prompts carry two matching guards, recorded in the same ledger: **D4** stops the
+value-add and message skills when the offer file has no `**Title:**` line (a v2-shaped card
+with no wedge data), and **D9** stops them — and the `tfl_build_value_add` workflow, at its
+preflight — when `about/tfl-voice.md` has no `**Idioms and insider slang:**` entry, meaning
+it predates the current house standard. Both send the member to `tfl-setup`; D8 is what
+makes that run repair the voice file.
 
 ## Versioning
 

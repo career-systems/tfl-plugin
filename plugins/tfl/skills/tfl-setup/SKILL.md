@@ -33,7 +33,9 @@ on empty or drifted files.
 ## When NOT to Use
 
 - The files exist and are filled. Don't re-interview; ask what changed and
-  update only that.
+  update only that. Still run step 1 either way: the `templates/` copies and
+  the house rules in `about/tfl-voice.md` are ours to keep current, and
+  refreshing those is not re-interviewing.
 - The member has no Fractional Offer card yet. The card comes from their
   playbook build. Say that plainly and stop; this skill captures an existing
   offer, it doesn't create one.
@@ -45,10 +47,10 @@ on empty or drifted files.
 - A short conversation. One question at a time, never a form.
 - The member's Fractional Offer page, pasted from their playbook (or the
   playbook link, if they'd rather you read it there).
-- The "How To Find Your Target Companies" section of their playbook's
-  Companies + People tab (Steps 1 to 4, the creative moves, and their
-  Strategic Partners list), pasted the same way. These are their custom
-  weekly search instructions; the weekly list build runs on them.
+- Their playbook's How To Find Companies tab (Steps 1 to 4 and the creative
+  moves) plus the Strategic Partners list from their Starting Company List
+  tab, pasted the same way. These are their custom weekly search
+  instructions; the weekly list build runs on them.
 - `templates/about-templates/` and `templates/start-here-template.md` from
   this repo.
 
@@ -59,32 +61,48 @@ on empty or drifted files.
   `outputs/value-adds/`, `outputs/messages/`.
 - All templates installed word for word into `templates/` (keeping
   `about-templates/` intact), so the value-add skill can read
-  `templates/value-add-template.md`.
+  `templates/value-add-template.md`. Every run refreshes these, so a workspace
+  scaffolded by an older version stops serving retired rules.
+- The house-owned sections of `about/tfl-voice.md` rebuilt from the current
+  template, with the member's `## My personal notes` kept word for word.
 - Filled about files in `about/`, with the offer card word for word and
   "needs input" marking any blank the member couldn't fill.
 - `START-HERE.md` in their folder, personalized with their name.
 
 ## Process
 
-1. **Build the scaffold** at `the-fractional-life/` if it doesn't exist:
-   `about/`, `templates/`, `outputs/company-lists/`, `outputs/company-profiles/`,
-   `outputs/value-adds/`, `outputs/messages/`. Install all templates word for
-   word into `templates/` (keeping the `about-templates/` folder intact).
-   Then copy the about templates into `about/`. Say one line about what you
-   made, no tech talk.
+1. **Build the scaffold** at `the-fractional-life/`, creating whichever of
+   these are missing: `about/`, `templates/`, `outputs/company-lists/`,
+   `outputs/company-profiles/`, `outputs/value-adds/`, `outputs/messages/`.
+   Install all templates word for word into `templates/` (keeping the
+   `about-templates/` folder intact), overwriting any copy already there —
+   everything under `templates/` is ours, never the member's work, so an old
+   copy is stale, not precious. Then copy the about templates into `about/`,
+   but only where that about file doesn't exist yet; never overwrite one that
+   does. One exception: `about/tfl-voice.md` is part theirs and part ours —
+   everything under `## My personal notes`, up to the next `##` heading, is
+   theirs, and every other section is the house standard. Rebuild it from the
+   freshly installed `templates/about-templates/tfl-voice.md` on every run,
+   splicing their `## My personal notes` back in word for word. If either file
+   is missing that heading, leave it untouched and tell the member it needs a
+   manual look; never guess at the boundary. Say one line about what you made
+   or refreshed, no tech talk.
 2. **Capture the offer card.** Ask them to paste their Fractional Offer page
    from their playbook, or drop the playbook link for you to read. It carries
    their title, wedge, pricing, targets, and outcome, so it replaces a dozen
    questions. Save it into the offer file exactly as pasted, word for word.
    No card yet? Stop with the named need: the card comes from their playbook
    first.
-3. **Capture their search instructions.** Ask them to paste the "How To Find
-   Your Target Companies" section of their playbook's Companies + People tab:
-   Steps 1 to 4, the creative moves, and their Strategic Partners list. Save
-   it word for word into `about/tfl-how-to-find-companies.md`. This is the
-   recipe their weekly target list runs on. Not built yet (their playbook's
-   Companies tab still says Coming Soon)? Write "needs input" and move on;
-   the weekly routine will ask again when it's ready.
+3. **Capture their search instructions.** Ask them to paste their playbook's
+   How To Find Companies tab (Steps 1 to 4 and the creative moves), then the
+   Strategic Partners list from their Starting Company List tab. Save both
+   word for word into `about/tfl-how-to-find-companies.md`, instructions
+   first, partner list under them. This is the recipe their weekly target
+   list runs on. An older playbook has all of this in one Companies + People
+   tab, in its "How To Find Your Target Companies" section; same content,
+   paste it the same way. Not built yet (the tabs still say Coming Soon)?
+   Write "needs input" and move on; the weekly routine will ask again when
+   it's ready.
 4. **Interview, one question at a time.**
    1. Your name and LinkedIn URL.
    2. At least 3 career wins, each with a real number. Big brand names are

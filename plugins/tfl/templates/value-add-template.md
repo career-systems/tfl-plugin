@@ -29,7 +29,17 @@ generally remove bottlenecks.
 - 3 plain bullets, 40 words max each, no bold lead-ins. Each one is a
   checkable fact from the confirmed company profile, then what it likely means
   for THIS company, in words the member would say out loud. Neutral or
-  positive only. Sentiment test: the founder nods "yep" at all 3.
+  positive only. The "what it likely means" half credits the founder's work or
+  names the scope they built; it never names a pain. Pain belongs in the
+  Bottlenecks section, and an observation written as a bottleneck makes the
+  page say everything twice, which is usually why a draft runs over the word
+  budget. The second half is optional: when the fact lands on its own, stop at
+  the fact, because a "what it means" line added to satisfy the shape turns
+  into a generalisation that sounds knowing and says nothing checkable.
+  Stopping at the fact is allowed only when the bare fact still does a job
+  alone: it credits work or shows scope the founder would nod at. A fact
+  that reads as trivia on its own means the fix is a different fact, never
+  a shorter bullet. Sentiment test: the founder nods "yep" at all 3.
 
 ### Typical bottlenecks at your size
 (These are patterns I see at similar companies)
@@ -78,7 +88,10 @@ Caps recap: 1 fixed from-line, 3 observations, up to 3 bottlenecks, a 1-line
 wedge intro, a 2-line sprint, 4 or 5 scorecard rows (4 real rows beat 5 with a padded one), a
 2-sentence close, 3 background bullets, 300 to 500 words total. The fixed lines (the from-line, the wedge line, and the scorecard line) never change
 per company; only the brackets get filled. If a section wants to run longer, the
-asset is doing too much. Hold the line.
+asset is doing too much. Hold the line. Come down by cutting whole things: a
+bullet, a clause, a scorecard row (4 real rows beat 5 padded ones), never by
+shortening a sentence past the point where it still reads out loud. A broken
+sentence costs more than 60 extra words.
 
 ## When the offer runs longer than 6 weeks
 
