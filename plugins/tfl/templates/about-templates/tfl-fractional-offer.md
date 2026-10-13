@@ -1,6 +1,6 @@
 # My fractional offer
 
-<!-- This file holds your Fractional Offer card, pasted exactly as it appears on the Fractional Offer page of your playbook. When your offer changes in the playbook, paste the new version over this one. Every skill reads your title, wedge, pricing, targets, and outcome from this card. -->
+<!-- This file holds your Fractional Offer page, pasted exactly as it appears in your playbook: the card, then the Snapshot Kit under it. When the page changes in your playbook, paste the new version over this one. Every skill reads your title, wedge, targets, Triggers, and kit from here. -->
 
 **Title:** needs input
 
@@ -23,6 +23,12 @@
 **How I help:** needs input
 
 **Hours (internal):** needs input
+
+## Snapshot Kit
+
+<!-- Pasted with the page above. Holds your bottleneck bank (each pattern with its clue tag), your cost line, your three wedge lines, your first-call question bank, and the byline and close your Snapshots use. -->
+
+needs input
 
 ## Tools
 

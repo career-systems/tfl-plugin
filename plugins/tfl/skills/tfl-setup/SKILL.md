@@ -1,6 +1,6 @@
 ---
 name: tfl-setup
-description: First-run setup. Builds the member's local folder at the-fractional-life/, captures their Fractional Offer card and their how-to-find-companies page from their playbook, and fills their about files. Use when a member says "set me up," "get me started," when about/ is missing, or when any about file still says "needs input." Also handles updates like "my offer changed" or "update my wins."
+description: First-run setup. Builds the member's local folder, captures their Fractional Offer page (card and Snapshot Kit), their Messages tab, and their How To Find Companies instructions from their playbook, and fills their about files. Use when a member says "set me up," "get me started," when about/ is missing, or when any about file still says "needs input." Also handles updates like "my offer changed."
 risk: low
 ---
 
@@ -8,144 +8,61 @@ risk: low
 
 ## Summary
 
-Get a member from "just added the connector" to "profile filled, first company
-named" in about 10 minutes, without a blank page or a technical step. The
-member's offer already exists in their playbook, so this is capture, not
-creation: they paste their Fractional Offer page, answer a few short
-questions, and every other skill can run.
+Everything the plugin needs about a member already exists in their playbook, graded. This skill captures it, page by page, so every other skill runs on the member's own approved material and never on a retyped version of it. About 10 minutes, no blank page, nothing technical on screen.
 
-## Problem Solved
+## Terms
 
-Every other skill in this repo depends on the member's profile: their offer
-card, wins, and voice. Left to fill templates alone, members stall at the
-blank page or abandon anything that looks technical. And an offer retyped from
-memory drifts from the graded card in their playbook. This skill captures the
-card exactly, and the rest in one short conversation, so the chain never runs
-on empty or drifted files.
+- **The playbook**: the member's Google Doc from The Fractional Life, one tab per page. The pages this skill captures: Fractional Offer (the card, then the Snapshot Kit block under it), Messages, How To Find Companies, and the Strategic Partners list from Starting Company List.
+- **About files**: the member's profile files in `about/`, copied from `templates/about-templates/` and filled here.
 
 ## When to Use
 
 - "Set me up," "get me started," first run in an empty folder.
-- Any skill finds `about/` missing or a file still saying "needs input."
-- "My offer changed," "update my wins," "change my voice notes" (rerun just
-  that part).
+- Any skill finds `about/` missing or a file saying "needs input."
+- "My offer changed," "my messages changed," "update my calendar link" (rerun that part only).
 
 ## When NOT to Use
 
-- The files exist and are filled. Don't re-interview; ask what changed and
-  update only that. Still run step 1 either way: the `templates/` copies and
-  the house rules in `about/tfl-voice.md` are ours to keep current, and
-  refreshing those is not re-interviewing.
-- The member has no Fractional Offer card yet. The card comes from their
-  playbook build. Say that plainly and stop; this skill captures an existing
-  offer, it doesn't create one.
-- The member names a company to pursue and their profile is already complete.
-  Go straight to the prospecting skills.
+- The files exist and are filled: ask what changed and update only that. Still run step 1 either way: the `templates/` copies and the house rules in `about/tfl-voice.md` are ours to keep current, and refreshing those is not re-interviewing.
+- The member has no Fractional Offer page yet. It comes from their playbook build; say so and stop.
 
 ## Inputs
 
-- A short conversation. One question at a time, never a form.
-- The member's Fractional Offer page, pasted from their playbook (or the
-  playbook link, if they'd rather you read it there).
-- Their playbook's How To Find Companies tab (Steps 1 to 4 and the creative
-  moves) plus the Strategic Partners list from their Starting Company List
-  tab, pasted the same way. These are their custom weekly search
-  instructions; the weekly list build runs on them.
-- `templates/about-templates/` and `templates/start-here-template.md` from
-  this repo.
+- A short conversation, one question at a time.
+- The member's playbook pages, pasted word for word, or read from their playbook when they share the link and have Google Drive connected.
+- `templates/about-templates/` and `templates/start-here-template.md`.
 
 ## Outputs
 
-- The folder scaffold at `the-fractional-life/`: `about/`, `templates/`,
-  `outputs/company-lists/`, `outputs/company-profiles/`,
-  `outputs/value-adds/`, `outputs/messages/`.
-- All templates installed word for word into `templates/` (keeping
-  `about-templates/` intact), so the value-add skill can read
-  `templates/value-add-template.md`. Every run refreshes these, so a workspace
-  scaffolded by an older version stops serving retired rules.
-- The house-owned sections of `about/tfl-voice.md` rebuilt from the current
-  template, with the member's `## My personal notes` kept word for word.
-- Filled about files in `about/`, with the offer card word for word and
-  "needs input" marking any blank the member couldn't fill.
-- `START-HERE.md` in their folder, personalized with their name.
+- The folder `the-fractional-life/` inside the folder the member opened: `about/`, `templates/`, `rules/`, `outputs/company-lists/`, `outputs/company-briefs/`, `outputs/value-adds/`, `outputs/messages/`.
+- All templates installed word for word into `templates/` (keeping `about-templates/` intact), so the value-add skill can read `templates/value-add-template.md`. The review rubric installed word for word as `rules/value-add-review-rubric.md`. Every run refreshes these, so a workspace scaffolded by an older version stops serving retired rules.
+- The house-owned sections of `about/tfl-voice.md` rebuilt from the current template, with the member's `## My personal notes` kept word for word.
+- Filled about files, each page word for word, "needs input" marking anything the member couldn't supply.
+- `START-HERE.md`, personalized.
 
 ## Process
 
-1. **Build the scaffold** at `the-fractional-life/`, creating whichever of
-   these are missing: `about/`, `templates/`, `outputs/company-lists/`,
-   `outputs/company-profiles/`, `outputs/value-adds/`, `outputs/messages/`.
-   Install all templates word for word into `templates/` (keeping the
-   `about-templates/` folder intact), overwriting any copy already there —
-   everything under `templates/` is ours, never the member's work, so an old
-   copy is stale, not precious. Then copy the about templates into `about/`,
-   but only where that about file doesn't exist yet; never overwrite one that
-   does. One exception: `about/tfl-voice.md` is part theirs and part ours —
-   everything under `## My personal notes`, up to the next `##` heading, is
-   theirs, and every other section is the house standard. Rebuild it from the
-   freshly installed `templates/about-templates/tfl-voice.md` on every run,
-   splicing their `## My personal notes` back in word for word. If either file
-   is missing that heading, leave it untouched and tell the member it needs a
-   manual look; never guess at the boundary. Say one line about what you made
-   or refreshed, no tech talk.
-2. **Capture the offer card.** Ask them to paste their Fractional Offer page
-   from their playbook, or drop the playbook link for you to read. It carries
-   their title, wedge, pricing, targets, and outcome, so it replaces a dozen
-   questions. Save it into the offer file exactly as pasted, word for word.
-   No card yet? Stop with the named need: the card comes from their playbook
-   first.
-3. **Capture their search instructions.** Ask them to paste their playbook's
-   How To Find Companies tab (Steps 1 to 4 and the creative moves), then the
-   Strategic Partners list from their Starting Company List tab. Save both
-   word for word into `about/tfl-how-to-find-companies.md`, instructions
-   first, partner list under them. This is the recipe their weekly target
-   list runs on. An older playbook has all of this in one Companies + People
-   tab, in its "How To Find Your Target Companies" section; same content,
-   paste it the same way. Not built yet (the tabs still say Coming Soon)?
-   Write "needs input" and move on; the weekly routine will ask again when
-   it's ready.
-4. **Interview, one question at a time.**
-   1. Your name and LinkedIn URL.
-   2. At least 3 career wins, each with a real number. Big brand names are
-      welcome here; they're useful context. (The value-add skill retells each
-      win about the kind of business when it goes on a page.) More than 3 is
-      good: each value-add uses the 3 that fit that company best.
-   3. Anything about how you write? Formality, phrases you use, anything
-      you'd never say. (Fine to skip; house rules cover them.)
-   4. Do you have AI Ark connected yet? (If not: point them to where to get
-      it, note "not yet" in the offer file, and reassure them everything
-      still works; they'll just confirm more org facts by hand.)
-5. **Fill the about files** from their answers. If they don't have a number
-   for a win, write "needs input" in that slot. Never invent one.
-6. **Write START-HERE.md** into their folder from the template, personalized
-   with their name.
-7. **Read their profile back** in 3-4 lines: title, wedge, target company,
-   wins count. Ask "anything to fix?"
-8. **The handoff:** "You're set. Want to see it work? Give me a company you'd
-   love to land." If they name one, kick off the tfl-build-value-add
-   workflow.
+1. **Build the folder** `the-fractional-life/` inside the folder the member opened, creating whichever of these are missing: `about/`, `templates/`, `rules/`, `outputs/company-lists/`, `outputs/company-briefs/`, `outputs/value-adds/`, `outputs/messages/`. Install all templates word for word into `templates/` (keeping the `about-templates/` folder intact) and the review rubric into `rules/`, overwriting any copy already there: everything under `templates/` and `rules/` is ours, never the member's work, so an old copy is stale, not precious. Then copy the about templates into `about/`, but only where that about file doesn't exist yet; never overwrite one that does. One exception: `about/tfl-voice.md` is part theirs and part ours. Everything under `## My personal notes`, up to the next `##` heading, is theirs, and every other section is the house standard. Rebuild it from the freshly installed `templates/about-templates/tfl-voice.md` on every run, splicing their `## My personal notes` back in word for word. If either file is missing that heading, leave it untouched and tell the member it needs a manual look; never guess at the boundary. One line to the member about what you made or refreshed.
+2. **Capture the Fractional Offer page** into `about/tfl-fractional-offer.md`, word for word: the card and the Snapshot Kit under it. No page yet: stop with the named need.
+3. **Capture the Messages tab** into `about/tfl-messages.md`, word for word, instructions lines included.
+4. **Capture the search instructions** into `about/tfl-how-to-find-companies.md`: the How To Find Companies tab, then the Strategic Partners list from the Starting Company List tab. (An older playbook holds both in one Companies + People tab; same content, same paste.) Tabs still saying Coming Soon: write "needs input" and move on.
+5. **Ask, one at a time:** their name and LinkedIn URL; their calendar booking link; anything about how they write (fine to skip); whether AI Ark is connected (if not, note "not yet" in the offer file and say everything still works).
+6. **Fill the about files** from the answers. Never invent a value; "needs input" marks a blank.
+7. **Write START-HERE.md** from the template with their name.
+8. **Read the profile back** in 3 lines (title, wedge, target company) and ask "anything to fix?"
+9. **Handoff:** "You're set. Give me a company you'd love to land and I'll build the Snapshot."
 
 ## Rules
 
-- One question at a time. A wall of questions is a form, and forms get
-  abandoned.
-- **The offer card lands word for word.** Retyping or summarizing it creates
-  a second version that drifts from the playbook. When the playbook's offer
-  changes, the member pastes the new page over the old one.
-- Never invent a number, a win, or a target detail. Marked blanks beat
-  guesses.
-- Nothing technical on screen: no file paths in conversation unless they ask.
-  "I saved your offer" beats naming a file path.
-- If they've clearly done this before (files exist and are filled), don't
-  re-interview. Ask what changed.
+- Every playbook page lands word for word. A retyped or summarized page drifts from the graded one; when the playbook changes, the member pastes the new page over the old.
+- One question at a time; a wall of questions is a form.
+- No file paths in conversation unless the member asks.
 
 ## Quality Checklist
 
-- [ ] The offer file holds the member's Fractional Offer card, word for word,
-      plus the AI Ark line.
-- [ ] Every about file is filled or has a clearly marked "needs input."
-- [ ] The how-to-find-companies file holds their playbook's search
-      instructions word for word, or a marked "needs input."
-- [ ] At least 3 wins with real numbers captured.
-- [ ] AI Ark status recorded.
-- [ ] START-HERE.md exists with their name in it.
-- [ ] You ended by asking for a company they'd love to land.
+- [ ] The offer file holds the card and the Snapshot Kit, word for word, plus the AI Ark line.
+- [ ] The messages file holds the Messages tab word for word, or "needs input."
+- [ ] The search-instructions file holds the tab and the partner list, or "needs input."
+- [ ] Name, LinkedIn URL, and calendar link captured.
+- [ ] START-HERE.md exists with their name.
+- [ ] You ended by asking for a company.

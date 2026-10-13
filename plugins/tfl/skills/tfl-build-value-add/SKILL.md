@@ -1,6 +1,6 @@
 ---
 name: tfl-build-value-add
-description: Workflow. The full chain for one company, research, recipient, bottlenecks, draft, branded docx, and send message, with three member review stops. This is the workflow that earns the introductory call. Use when the member says "build a value-add for [company]," "run the whole thing on [company]," or picks a company off their approved list.
+description: Workflow. The full chain for one company, from research to the send: the pre-call brief, the fit decision, the recipient, the picks, the Snapshot, the branded file, and the messages, with three member review stops. Use when the member says "build a Snapshot for [company]," "build a value-add for [company]," or picks a company off their approved list.
 risk: high
 ---
 
@@ -19,7 +19,7 @@ truth for this workflow's process, and this file must never duplicate it.
 
 ## When to use
 
-- The member says "build a value-add for [company]," "run the whole thing on
+- The member says "build a Snapshot for [company]," "run the whole thing on
   [company]," or picks a company off their approved list.
 
 ## Prerequisite
