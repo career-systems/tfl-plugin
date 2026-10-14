@@ -111,7 +111,7 @@ This plugin ships from Katie's pristine vendored source
 (`forKatie/TFL Skill Repo v4/`), which is never edited in place. Every place
 a shipped artifact differs from that source by even one character is recorded as a find/
 replace entry in `tests/unit/tfl-plugin/vendor-deviations.ts` and machine-checked for
-byte-equality (spec 133 D7); that ledger, closed at 23 entries, is the source of truth.
+byte-equality (spec 133 D7); that ledger, closed at 28 entries, is the source of truth.
 These change how this plugin behaves for a member:
 
 - **D1 — workspace root stays `the-fractional-life/`.** v4's `tfl-setup` names no path. We
@@ -142,6 +142,11 @@ These change how this plugin behaves for a member:
   titles. Nothing under `plugins/` names a member.
 - **D13 — a review step at stop 2.** Step 7 of the workflow gains the review through
   `tfl_review_value_add` and the shipped rubric. It reports only and never holds the page.
+- **D16 — the workspace always lands on the member's computer.** Run locally, `tfl-setup`
+  builds `the-fractional-life/` in the folder the member opened, even if another folder is
+  also linked. Run in the cloud with a linked folder, it copies everything into
+  `the-fractional-life/` inside that linked folder. Either way it lists the folder to confirm
+  each file landed.
 
 D4 (the Title-line guard) is retired: a v2-shaped card has no kit, so D10 catches it.
 
@@ -149,5 +154,5 @@ D4 (the Title-line guard) is retired: a v2-shaped card has no kit, so D10 catche
 
 `.claude-plugin/plugin.json` `version` is the single source of truth for the packaged release
 artifact name (`tfl-plugin-v<version>.zip`, built by CI). Bump it to publish a new release.
-The release is published by pushing the `tfl-plugin-v0.7.0` tag, which the owner does after
+The release is published by pushing the `tfl-plugin-v0.7.1` tag, which the owner does after
 the `tfl-mcp` deploy, never before.
